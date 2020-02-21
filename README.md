@@ -1,5 +1,3 @@
-<p align="center"> 
-<img src="https://i.ibb.co/7yCGBWd/20200221-135337-picsay.jpg">
-</p>
+![](https://i.ibb.co/7yCGBWd/20200221-135337-picsay.jpg#center)
 
-![](https://img.shields.io/badge/python-3.8.0-green#center)      ![](https://img.shields.io/badge/PHP-7.4.2-blue#center)     ![](https://img.shields.io/badge/python-2.7.17-orange#center)
+![](https://img.shields.io/badge/python-3.8.0-green#center)      ![](https://img.shields.io/badge/PHP-7.4.2-blue)     ![](https://img.shields.io/badge/python-2.7.17-orange)

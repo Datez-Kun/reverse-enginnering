@@ -3,6 +3,7 @@
 # Author : ./FUKUR0-3XP
 # Team : Black Coders Anonymous Satanic Exploiter Team ( BCA - X666X )
 # Recode Tidak Akan Membuat Anda Menjadi Pencipta Kode :3
+# Decompiling At : Wednesday, 26 Feb 2020 ,- 23:43:54
 
 from requests.exceptions import ConnectionError 
 from cookielib import LWPCookieJar as Cookie

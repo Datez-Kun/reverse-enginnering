@@ -1,4 +1,5 @@
 # Author Mr.Tr3v!0n & A-Gmvt
+# Decoded At : Wednesday ,26 Feb 2020 ,- 16:45:00
 
 b="\033[34;1m"
 p="\033[39;1m"

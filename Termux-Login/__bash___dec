@@ -1,0 +1,28 @@
+sh .login.sh
+k="[33;1m"
+m="[31;1m"
+pu="[39;1m"
+p="[36;1m"
+b="[34;1m"
+h="[32;1m"
+JAM=`date +%H`
+MENIT=`date +%M`
+DETIK=`date +%S`
+TANGGAL=`date +%d`
+BULAN=`date +%m`
+TAHUN=`date +%Y`
+mp="[41;1;39m"
+o="[0m"
+clear
+echo
+echo -e "           ${m}[ ${pu}TIME ZONE INDONESIA ${m}]"
+echo -e "${b}     ╔════════╗${b} ╔═══════🕜═╗${b} ╔═══════🕛═╗"
+echo -e "${b}     ║${k}JAM:"${m}[${pu}$JAM${m}]${b}║~${b}║${k}MENIT:"${m}[${pu}$MENIT${m}]${b}║${b}~║${k}DETIK:${m}["${pu}$DETIK${m}]${b}║
+echo -e "${b}     ╚════════╝${b} ╚══════════╝${b} ╚══════════╝"
+echo -e "                 ${m}[ ${pu}KALENDER ${m}]"
+echo -e "${b}  ╔════════════╗${b} ╔══════════╗${b} ╔════════════╗"
+echo -e "${b}  ║${k}TANGGAL:"${m}[${pu}$TANGGAL${m}]${b}║${b}~║${k}BULAN:"${m}[${pu}$BULAN${m}]${b}║${b}~║${k}TAHUN:${m}["${pu}$TAHUN${m}]${b}║
+echo -e "${b}  ╚════════════╝${b} ╚══════════╝${b} ╚════════════╝"
+echo -e "${pu}<"${m}"═════════════════════"${k}"<"${b}"X"${k}">"${pu}"═════════════════════"${m}">"
+echo
+export PS1='\[[01;39m\][ \[[01;31m\]${PWD/*\//}\[[01;39m\] ]\[[01;32m\]•\[[01;32m\]>\[[01;39m\] '

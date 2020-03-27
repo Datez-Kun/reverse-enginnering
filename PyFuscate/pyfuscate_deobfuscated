@@ -1,0 +1,77 @@
+banner() {
+clear
+printf "
+"
+printf "\e[0m\e[1;93m   _____         ______                   _       
+"
+printf "\e[0m\e[1;93m  |  __ \       |  ____|                 | |      
+"
+printf "\e[0m\e[1;93m  | |__) |   _  | |__ _   _ ___  ___ __ _| |_ ___ 
+"
+printf "\e[0m\e[1;93m  |  ___/ | | | |  __| | | / __|/ __/ _  | __/ _ |
+"
+printf "\e[0m\e[1;93m  | |   | |_| | | |  | |_| \__ \ (_| (_| | ||  __/
+"
+printf "\e[0m\e[1;93m  |_|    \__, | |_|   \__,_|___/\___\__,_|\__\___|
+"
+printf "\e[0m\e[1;93m          __/ |                                   
+"
+printf "\e[0m\e[1;93m         |___/                                    
+"
+printf "
+"
+printf "  \e[0m\e[1;93mCreated By HTR-TECH \e[0m\e[1;96m( \e[0m\e[1;93mTahmid Rayat \e[0m\e[1;96m)"
+}
+banner
+printf "
+"
+printf "
+"
+printf "
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Script to Encrypt : \e[0m\e[1;96m\en' encname
+printf "
+"
+printf "
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Output Script Name : \e[0m\e[1;96m\en' enctname
+printf "
+"
+printf "
+"
+sleep 2
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing ...\e[0m
+"
+printf "
+"
+printf "
+"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Encrypting $encname ...\e[0m\e[1;92m  "
+emojify --input $encname --output $enctname
+printf "
+"
+printf "
+# Encrypted By PyFuscate (https://github.com/htr-tech/PyFuscate)
+
+# PyFuscate Created By Tahmid Rayat
+# Github : github.com/htr-tech
+# Instagram : @tahmid.rayat
+" >> $enctname
+printf "
+"
+sleep 2
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m $enctname\e[0m\e[1;93m has Encrypted Successfully !!\e[0m
+"
+sleep 2
+printf "
+"
+printf "
+"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m File saved at\e[0m\e[1;93m ~/PyFuscate/$enctname\e[0m
+"
+printf "
+"
+printf "
+"
+sleep 2
+exit 1

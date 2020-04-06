@@ -1,0 +1,5 @@
+/wp-login.php
+/wp-login.php site:ac
+/wp-login.php site:ad
+/wp-login.php site:ae
+/wp-login.php site:af

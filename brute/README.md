@@ -10,3 +10,7 @@
 <p>pip install -r requirements.txt</p>
 <h3>Menjalankan:</h3>
 <p>python attack.py</p>
+
+------
+![](https://i.ibb.co/r5ghwmW/Screenshot-20200411-144534.png)
+------

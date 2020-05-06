@@ -12,3 +12,4 @@ $ python2 del_bg.py<br>
 Move Your Image to the Remove-Bg Folder for Easy Use;v<br>
 The removed background image is in the "Images" folder<br>
 <h1><a href="https://api.whatsapp.com/send?phone=+628978125962">Contact WhatsApp </a></h1>
+Oke

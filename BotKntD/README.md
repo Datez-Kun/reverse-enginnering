@@ -20,3 +20,4 @@ $ pip2 install -r kntd.txt
 $ python2 BotKntD.py
 
 Made By Love :)
+.

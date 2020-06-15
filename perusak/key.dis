@@ -1,0 +1,21 @@
+# Timestamp in code: 1591801487 (2020-06-10 22:04:47)
+# Method Name:       <module>
+# Filename:          <JustA>
+# Argument count:    0
+# Number of locals:  0
+# Stack size:        2
+# Flags:             0x00000040 (NOFREE)
+# First Line:        1
+# Names:
+#    0: hashlib
+#    1: sha512
+#    2: __file__
+#    3: hexdigest
+  1:           0 LOAD_NAME                 0 (hashlib)
+               3 LOAD_ATTR                 1 (sha512)
+               6 LOAD_NAME                 2 (__file__)
+               9 CALL_FUNCTION             1 (1 positional, 0 named)
+              12 LOAD_ATTR                 3 (hexdigest)
+              15 CALL_FUNCTION             0 (0 positional, 0 named)
+              18 RETURN_VALUE
+

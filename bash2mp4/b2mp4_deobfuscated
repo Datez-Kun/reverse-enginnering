@@ -1,0 +1,208 @@
+banner() {
+clear
+printf "\e[0m
+"
+printf "\e[0m\e[1;93m   ____            _      \e[0m\e[1;92m                _  _    \e[0m
+"
+printf "\e[0m\e[1;93m  |  _ \          | |     \e[0m\e[1;92m               | || |   \e[0m
+"
+printf "\e[0m\e[1;93m  | |_) | __ _ ___| |__   \e[0m\e[1;92m _ __ ___  _ __| || |_  \e[0m
+"
+printf "\e[0m\e[1;93m  |  _ < / _  / __|  _ \  \e[0m\e[1;92m|  _   _ \|  _ \__   _| \e[0m
+"
+printf "\e[0m\e[1;93m  | |_) | (_| \__ \ | | | \e[0m\e[1;92m| | | | | | |_) | | |   \e[0m
+"
+printf "\e[0m\e[1;93m  |____/ \__,_|___/_| |_| \e[0m\e[1;92m|_| |_| |_| .__/  |_|   \e[0m
+"
+printf "\e[0m\e[1;93m                          \e[0m\e[1;92m          | |           \e[0m
+"
+printf "\e[0m\e[1;93m                          \e[0m\e[1;92m          |_|           \e[0m
+"
+printf "\e[0m
+"
+printf "\e[0m\e[1;93m    Created By HTR-TECH \e[0m\e[1;91m(\e[0m\e[1;92mTahmid Rayat\e[0m\e[1;91m)\e[0m
+"
+}
+menu() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Download MP4\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m02\e[0m\e[1;91m]\e[0m\e[1;93m Download MP3\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m03\e[0m\e[1;91m]\e[0m\e[1;93m More Tools From Us\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m04\e[0m\e[1;91m]\e[0m\e[1;93m Exit\e[0m
+"
+printf "\e[0m
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select an option: \e[0m\e[1;96m\en' option
+if [[ $option == 1 || $option == 01 ]]; then
+printf "\e[0m
+"
+printf "\e[0m
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input Video URL : \e[0m\e[1;96m\en' urlmp4
+downmpf
+elif [[ $option == 2 || $option == 02 ]]; then
+printf "\e[0m
+"
+printf "\e[0m
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input Video URL : \e[0m\e[1;96m\en' urlmp3
+downmpt
+elif [[ $option == 3 || $option == 03 ]]; then
+sleep 1
+termux-open-url https://github.com/htr-tech/
+sleep 2
+banner
+menu
+elif [[ $option == 4 || $option == 04 ]]; then
+sleep 1
+printf "\e[0m
+"
+printf "\e[0m
+"
+exit 1
+else
+printf " \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m
+"
+sleep 1
+banner
+menu
+fi
+}
+downmpf() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m High Resolution\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m02\e[0m\e[1;91m]\e[0m\e[1;93m Best Resolution\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m03\e[0m\e[1;91m]\e[0m\e[1;93m Good Resolution\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m04\e[0m\e[1;91m]\e[0m\e[1;93m Back to Main Menu\e[0m
+"
+printf "\e[0m
+"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select an Option : \e[0m\e[1;96m\en' downmpf_option
+if [[ $downmpf_option == 1 || $downmpf_option == 01 ]]; then
+downmpfhi
+elif [[ $downmpf_option == 2 || $downmpf_option == 02 ]]; then
+downmpfbe
+elif [[ $downmpf_option == 3 || $option == 03 ]]; then
+downmpfgd
+elif [[ $downmpf_option == 4 || $downmpf_option == 04 ]]; then
+sleep 1
+banner
+menu
+else
+printf " \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m
+"
+sleep 1
+banner
+menu
+fi
+}
+downmpfhi() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Binding Packates...\e[0m
+"
+echo '--no-mtime -o /sdcard/B2Mp4/Mp4/%(title)s.%(ext)s -f "best[height<=1080]"' > ~/.config/youtube-dl/config
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Downloading...\e[0m
+"
+printf "\e[0m\e[1;93m
+"
+youtube-dl $urlmp4
+sleep 2
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m File Saved at\e[0m\e[1;92m /sdcard/B2Mp4/Mp4\e[0m
+"
+printf "\e[0m
+"
+printf "\e[0m
+"
+sleep 2
+exit 1
+}
+downmpfbe() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Binding Packates...\e[0m
+"
+echo '--no-mtime -o /sdcard/B2Mp4/Mp4/%(title)s.%(ext)s -f "136"' > ~/.config/youtube-dl/config
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Downloading...\e[0m
+"
+printf "\e[0m\e[1;93m
+"
+youtube-dl $urlmp4
+sleep 2
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m File Saved at\e[0m\e[1;92m /sdcard/B2Mp4/Mp4\e[0m
+"
+printf "\e[0m
+"
+printf "\e[0m
+"
+sleep 2
+exit 1
+}
+downmpfgd() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Binding Packates...\e[0m
+"
+echo '--no-mtime -o /sdcard/B2Mp4/Mp4/%(title)s.%(ext)s -f "397"' > ~/.config/youtube-dl/config
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Downloading...\e[0m
+"
+printf "\e[0m\e[1;93m
+"
+youtube-dl $urlmp4
+sleep 2
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m File Saved at\e[0m\e[1;92m /sdcard/B2Mp4/Mp4\e[0m
+"
+printf "\e[0m
+"
+printf "\e[0m
+"
+sleep 2
+exit 1
+}
+downmpt() {
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Binding Packates...\e[0m
+"
+echo '--no-mtime -o /sdcard/B2Mp4/Mp3/%(title)s.%(ext)s -f "best[height<=1080]"' > ~/.config/youtube-dl/config
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Downloading...\e[0m
+"
+printf "\e[0m\e[1;93m
+"
+youtube-dl --extract-audio --audio-format mp3 $urlmp3
+sleep 2
+printf "\e[0m
+"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m File Saved at\e[0m\e[1;92m /sdcard/B2Mp4/Mp3\e[0m
+"
+printf "\e[0m
+"
+printf "\e[0m
+"
+sleep 2
+exit 1
+}
+banner
+menu

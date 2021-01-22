@@ -1,0 +1,73 @@
+clear
+echo
+echo
+echo
+echo -e '\e[0m\e[1;32m
+	█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀
+	█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█'
+echo
+echo -e '\e[0m\e[1;31m
+	[\e[0m\e[1;37m████................\e[0m\e[1;31m]\e[0m\e[1;36m  20 %'
+echo
+echo -e '\e[0m\e[1;33m
+	 Created by Tahmid Rayat'
+sleep 1.5
+clear
+echo
+echo
+echo
+echo -e '\e[0m\e[1;32m
+	█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀
+	█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█'
+echo
+echo -e '\e[0m\e[1;31m
+	[\e[0m\e[1;37m████████............\e[0m\e[1;31m]\e[0m\e[1;36m  40 %'
+echo
+echo -e '\e[0m\e[1;33m
+	 Created by Tahmid Rayat'
+sleep 1.5
+clear
+echo
+echo
+echo
+echo -e '\e[0m\e[1;32m
+	█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀
+	█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█'
+echo
+echo -e '\e[0m\e[1;31m
+	[\e[0m\e[1;37m████████████........\e[0m\e[1;31m]\e[0m\e[1;36m  60 %'
+echo
+echo -e '\e[0m\e[1;33m
+	 Created by Tahmid Rayat'
+sleep 1.5
+clear
+echo
+echo
+echo
+echo -e '\e[0m\e[1;32m
+	█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀
+	█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█'
+echo
+echo -e '\e[0m\e[1;31m
+	[\e[0m\e[1;37m████████████████....\e[0m\e[1;31m]\e[0m\e[1;36m  80 %'
+echo
+echo -e '\e[0m\e[1;33m
+	 Created by Tahmid Rayat'
+sleep 1.5
+clear
+echo
+echo
+echo
+echo -e '\e[0m\e[1;32m
+	█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀
+	█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█'
+echo
+echo -e '\e[0m\e[1;31m
+	[\e[0m\e[1;37m██████████████████..\e[0m\e[1;31m]\e[0m\e[1;36m  90 %'
+echo
+echo -e '\e[0m\e[1;33m
+	 Created by Tahmid Rayat'
+echo -e '\e[0m'
+sleep 1.5
+clear
+PS1="[\w] >> "

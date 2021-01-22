@@ -1,0 +1,13 @@
+TENTANG SELENIA TRADEBOT VISI DAN MISI CREATOR
+
+Hallo nama saya Layscape sebagai kreator dari script ini, saya bikin ini agar tidak adanya terjadi kesalahpahaman maupun hal lainnya yang dapat merugikan. Jadi awalnya script ini terinspirasi dengan aplikasi Dogetrade(Apapun jenisnya). Tujuan saya membuat script ini adalah membuat versi litenya agar bisa dipakai kalangan masyarakat luas dengan harga yang lebih merakyat. Script ini terintegrasi dengan 999Doge. Kenapa saya sebut script ini Tradebot ini karena tujuan saya adalah target pasarnya para pemain aplikasi Dogetrade. Sebenarnya script ini bukan murni trading yang seperti kita tau ada buy sama sell. Ingat trading itu adalah masalah harga buy dan sell, sedangkan dice/judi itu adalah masalah chance high and low. Lalu kenapa saya menggunakan nama tradebot padahal ini bukan trading ya dikarenakan orang mengenal 913Dogetrade adalah platform trading seperti yang saya bilang target pasar pertama saya adalah pemain Dogetrade. 
+
+Kelebihan script selenia ini adalah yang paling utama dan menonjol adalah eksekusi per rollnya hingga 200. Sehingga ini sangat mengefesiensi waktu karena kalau script dice itu eksekusi rollnya satu persatu, sedangkan selenia bisa di setting hingga sampai 200. Untuk kita yang ingin memainkan dice tetapi memerlukan vps agar cepat bettingnya alternatifnya cukup menggunakan selenia saja. Untuk pemain kecil dan balance kecil saya sangat menyarankan menggunakannya dikarenakan efesiensi waktu yang maksimal tersebut. Pemain Dogetrade(913Dogetrade) juga saya sarankan untuk mencoba script ini karena cara bermainnya tidak jauh beda dan ini lebih fleksibel
+
+Visi saya menciptakan script ini adalah transparasi terhadap riwayat eksekusi. Sehingga tidak ada campur tangan dan kalian bisa melihat sendiri apa yang telah terjadi ketika lose ataupun win. Misi saya adalah menciptakan lingkungan yang nyaman dan keamanan bertransaksi dan penggunaan script agar teman-teman semua terhindar dari yang namanya script phising atau illegal yang membuat data akun kalian kebocoran atau balance kalian tiba-tiba hilang saat menjalankan script dari orang lain.
+
+Sekian terima kasih informasi yang saya sampaikan semoga bermanfaat jika ada pertanyaan dengan senang hati bisa hubungi saya
+
+
+~Salam Selenia dan Salam Opit
+Jangan lupa subscribe ke channel saya Akumaru Layscape

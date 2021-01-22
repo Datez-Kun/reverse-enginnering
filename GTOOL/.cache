@@ -1,0 +1,349 @@
+#!/usr/bin/bash
+#Encoding UTF-8
+#author siapa aja
+benar(){ 
+fun=$1
+if [[ $(whiptail --title "Hasil" --yesno "jawaban anda benar \nApakah ingin Lanjut Menghitung?" 8 78 --yes-button "Lanjut" --no-button "Tidak" 3>&1 1>&2 2>&3) ]]
+	then
+		soal
+	else
+		menu
+	fi
+}
+penyelesaian(){
+angka1=$1
+operator=$2
+angka2=$3
+hasil=$4
+fun=$5
+if [[ $(whiptail --title "PENYELESAIAN" --yesno "hasil dari $angka1 $operator $angka2 = $hasil\n Apakah Ingin Lanjut Menghitung?" 8 78 --yes-button "Lanjut" --no-button "Tidak" 3>&1 1>&2 2>&3) ]]
+	then
+		$5
+	else
+		menu
+	fi
+}
+salah(){
+angka1=$1
+operator=$2
+angka2=$3
+hasil=$4
+fun=$5
+printf '\a\a'
+if [[ $(whiptail --title "Hasil" --yesno "jawaban anda salah $angka1 $operator $angka2 = $hasil \nApakah ingin Lanjut Menghitung?" 8 78 --yes-button "Lanjut" --no-button "Tidak" 3>&1 1>&2 2>&3) ]]
+	then
+		$5
+	else
+		menu
+	fi
+}
+penjumlahan(){
+angka1=$(whiptail --title 'PENJUMLAHAN' --inputbox "masukan angka ke-1 :" 8 58 3>&1 1>&2 2>&3)
+angka2=$(whiptail --title 'PENJUMLAHAN' --inputbox "masukan angka ke-2 :" 8 58 3>&1 1>&2 2>&3)
+if [[ $angka1 == '' ]] || [[ $angka1 == ' ' ]]
+then
+	whiptail --title "PERINGATAN ! " --msgbox "yg anda masukan tidak valid" 10 38
+	penjumlahan
+else
+	hasil=$[( $angka1+$angka2 )]
+	penyelesaian $angka1 '+' $angka2 $hasil penjumlahan
+
+fi
+}
+pengurangan(){
+angka1=$(whiptail --title 'PENGURANGAN' --inputbox "masukan angka ke-1 :" 8 58 3>&1 1>&2 2>&3)
+angka2=$(whiptail --title 'PENGURANGAN' --inputbox "masukan angka ke-2 :" 8 58 3>&1 1>&2 2>&3)
+if [[ $angka1 == '' ]] || [[ $angka1 == ' ' ]]
+then
+	whiptail --title "PERINGATAN ! " --msgbox "yg anda masukan tidak valid" 10 38
+	pengurangan
+else
+	hasil=$[( $angka1-$angka2 )]
+	penyelesaian $angka1 '-' $angka2 $hasil pengurangan
+fi
+}
+perpangkatan(){
+angka1=$(whiptail --title 'PERKALIAN' --inputbox "masukan angka ke-1 :" 8 58 3>&1 1>&2 2>&3)
+angka2=$(whiptail --title 'PERKALIAN' --inputbox "masukan angka ke-2 :" 8 58 3>&1 1>&2 2>&3)
+if [[ $angka1 == '' ]] || [[ $angka1 == ' ' ]]
+then
+        whiptail --title "PERINGATAN ! " --msgbox "yg anda masukan tidak valid" 10 38
+        perpangkatan
+else
+	hasil=$[( "angka1**$angka2" )]
+        penyelesaian $angka1 '^' $angka2 $hasil perpangkatan
+fi
+}
+perkalian(){
+angka1=$(whiptail --title 'PERKALIAN' --inputbox "masukan angka ke-1 :" 8 58 3>&1 1>&2 2>&3)
+angka2=$(whiptail --title 'PERKALIAN' --inputbox "masukan angka ke-2 :" 8 58 3>&1 1>&2 2>&3)
+if [[ $angka1 == '' ]] || [[ $angka1 == ' ' ]]
+then
+	whiptail --title "PERINGATAN ! " --msgbox "yg anda masukan tidak valid" 10 38
+	perkalian
+else
+	hasil=$[( $angka1*$angka2 )]
+	penyelesaian $angka1 '*' $angka2 $hasil perkalian
+fi
+}
+pembagian(){
+angka1=$(whiptail --title 'PEMBAGIAN' --inputbox "masukan angka ke-1 :" 8 58 3>&1 1>&2 2>&3)
+angka2=$(whiptail --title 'PEMBAGIAN' --inputbox "masukan angka ke-2 :" 8 58 3>&1 1>&2 2>&3)
+if [[ $angka1 == '' ]] || [[ $angka1 == ' ' ]]
+then
+	whiptail --title "PERINGATAN ! " --msgbox "yg anda masukan tidak valid" 10 38
+	pembagian
+else
+	hasil=$(bc -l <<<"scale=2;$angka1/$angka2")
+	penyelesaian $angka1 '/' $angka2 $hasil pembagian
+fi
+}
+soal(){
+angka1=$[( $RANDOM%20 )+2]
+angka2=$[( $RANDOM%20 )+2]
+operator=("+" "*" "/" "-")
+random=$(shuf -i 0-3|head -1)
+operandom=${operator[$random]}
+jwb=$(whiptail --title 'SOAL' --inputbox "$angka1 $operandom $angka2 = " 8 58 3>&1 1>&2 2>&3)
+hasil=$(expr $angka1 "$operandom" $angka2)
+if [[ $jwb == $hasil ]]
+then
+	benar soal
+else
+	salah $angka1 "$operandom" $angka2 $hasil soal
+fi
+}
+menu(){
+menumath=$( whiptail --title "Menu" --menu "Krypton:~#" 13 78 7 \
+        "[1]" "Penjumlahan" \
+        "[2]" "Pengurangan" \
+        "[3]" "Perkalian" \
+        "[4]" "Pembagian" \
+        "[5]" "Perpangkatan" \
+	"[6]" "Soal" \
+	"[7]" "Kembali"  3>&1 1>&2 2>&3 )
+
+if [[ $menumath == '[1]' ]]
+then
+	penjumlahan
+elif [[ $menumath == '[2]' ]]
+then
+	pengurangan
+elif [[ $menumath == '[3]' ]]
+then
+	perkalian
+elif [[ $menumath == '[4]' ]]
+then
+	pembagian
+elif [[ $menumath == '[5]' ]]
+then
+	perpangkatan
+elif [[ $menumath == '[6]' ]]
+then
+	soal
+elif [[ $menumath == '[7]' ]]
+then
+	submenu
+else
+	echo "$menumath"
+fi
+}
+
+
+#ddos dialog --title "H" --prgbox "python hammer.py -s 157.240.25.35 -p 80 -t 135" 18 70
+ddos(){
+	ip=$(whiptail --title 'OPSI' --inputbox "IP :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	port=$(whiptail --title 'Opsi' --inputbox "PORT :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	ttl=$(whiptail --title 'Opsi' --inputbox "TTL MAX 135 :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	dialog --title "HAMMER FOR DDOS" --prgbox "cd $(pwd)/system/hammer/;python hammer.py -s $ip -p $port -t $ttl" 18 70
+}
+copier(){
+if [ -f $PREFIX/bin/httrack ]
+then
+	url=$(whiptail --title 'WEB COPIER' --inputbox "URL WEBSITE :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	fol=$(whiptail --title 'WEB COPIER' --inputbox "DIRECTORY :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	dialog --title "MENGNYALIN WEBSITE" --prgbox "httrack $url -O ./$fol -N100 -I0 -N '%p/%n%[month].%t' --max-rate 0 --disable-security-limits --near" 18 70
+else
+{ for (( n=0;n<=100;n++ ))
+do
+echo $n
+sleep $[( $RANDOM / 100000 )]
+done }|whiptail --title "MEMASANG" --gauge "sedang memasang httrack ..." 6 50 0
+submenu
+pkg install httrack -y
+copier
+fi
+}
+spamsms(){
+	no=$(whiptail --title 'SPAM SMS' --inputbox "NOMER HP :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	juml=$(whiptail --title 'SPAM SMS' --inputbox "JUMLAH :" 8 58 3>&1 1>&2 2>&3)
+	status=$?
+	if [[ $status == 1 ]]
+	then
+		exit
+	fi
+	dialog --title "SEDANG MENYEPAM $no" --prgbox "cd $(pwd)/system/k-bisa-otp;python kitabis.py wa $no $juml" 18 70
+	submenu
+}
+
+spamgmail(){
+    gmail=$(whiptail --title 'SPAM GMAIL' --inputbox "GMAIL :" 8 58 3>&1 1>&2 2>&3)
+    status=$?
+    if [[ $status == 1 ]]; then
+        exit
+    fi
+    jum=$(whiptail --title 'SPAM GMAIL' --inputbox "JUMLAH :" 8 58 3>&1 1>&2 2>&3)
+    status=$?
+    if [[ $status == 1 ]]; then
+        exit
+    fi
+    teks=$(whiptail --title 'SPAM GMAIL' --inputbox "pesan :" 8 58 3>&1 1>&2 2>&3)
+    status=$?
+    if [[ $status == 1 ]]; then
+        exit
+    fi
+    {
+
+    for (( n=0;n<=$jum;n++ )); do
+        python2 -c "
+from mailfree import * 
+send('$gmail','krypton:~#','$teks')" >>/dev/null
+        echo $[( $n*100/$jum )]
+        sleep 1
+    done
+    }|whiptail --title "KRYPTON:~#" --gauge "SEDANG MENYEPAM KE $gmail" 6 70 0
+    whiptail --title "PEMBERITAHUAN ! " --msgbox "SPAM KE GMAIL $gmail" 10 38
+}
+
+
+CGUI(){
+search=$(whiptail --title '+--------------KRYPTON-------------+' --inputbox "CARI :" 8 58 3>&1 1>&2 2>&3)
+if [[ $search == '' ]] || [[ $search == ' ' ]]
+then
+	whiptail --title "PEMBERITAHUAN !" --msgbox "YG ANDA MASUKAN SALAH" 8 45
+	CGUI
+fi
+pilihan=$( whiptail --title "Menu" --menu "Pilihan Bahasa :" 13 78 5 \
+        "[1]" "PYTHON" \
+        "[2]" "BASH" \
+        "[3]" "PHP" \
+        "[4]" "RUBY"   3>&1 1>&2 2>&3 )
+clear
+if [[ $pilihan == '[1]' ]]
+then
+	clon $search python
+elif [[ $pilihan == '[2]' ]]
+then
+	clon $search bash
+elif [[ $pilihan == '[3]' ]]
+then
+	clon $search php
+elif [[ $pilihan == '[4]' ]]
+then
+	clon $search ruby
+else
+	whiptail --title "PEMBERITAHUAN !" --msgbox "SELAMAT TINGGAL BOSS QUE" 8 45
+fi
+}
+clon(){
+	{
+		for (( n=0;n<=100;n++ ))
+		do
+			echo "$n"
+			sleep $( bc <<<"scale=2;$RANDOM/1000000")
+		done
+	}|whiptail --title "CLONER" --gauge "SEDANG MENCARI ..... " 6 50 0
+g=$(pwd)
+cloner=$( whiptail --title "HASIL PENCARIAN" --menu "CLONE" 13 78 5 \
+$(python2 $PWD/system/len "$1" "$2";cd $g ) 3>&1 1>&2 2>&3 )
+	aut=$(echo "$cloner"|jq -r '.a')
+	repo=$(echo "$cloner"|jq -r '.r')
+	if [[ "$cloner" == "" ]] || [[ "$cloner" == "" ]]
+	then
+		whiptail --title "PEMBERITAHUAN !" --msgbox "SELAMAT TINGGAL BOSS QUE" 8 45
+	else
+		{
+			for (( n=0;n<=100;n++ ))
+			do
+				echo "$n"
+				sleep $( bc <<<"scale=2;$RANDOM/1000000")
+			done
+		}|whiptail --title "CLONER" --gauge "SEDANG MENDOWNLOAD ..... " 6 50 0
+		m=$(pwd)
+		cd $(pwd)/system/clone;sh clone "$aut" "$repo" >>/dev/null
+		cd $m
+		whiptail --title "PEMBERITAHUAN !" --msgbox "SUKSES BOSS QUE" 8 45
+	exit
+	fi
+}
+
+
+submenu(){
+menuall=$( whiptail --title "Menu" --menu "Krypton:~#" 15 70 5 \
+        "[1]" "MATEMATIKA" \
+        "[2]" "DDOS" \
+        "[3]" "WEB CLONNER" \
+        "[4]" "SPAM SMS WA" \
+        "[5]" "SPAM GMAIL" \
+	"[6]" "CGUI"  3>&1 1>&2 2>&3 )
+if [[ $menuall == "[1]" ]]
+then
+menu
+elif [[ $menuall == "[2]" ]]
+then
+ddos
+elif [[ $menuall == "[3]" ]]
+then
+copier
+elif [[ $menuall == "[4]" ]]
+then
+spamsms
+elif [[ $menuall == "[5]" ]]
+then
+spamgmail
+elif [[ $menuall == "[6]" ]]
+then
+CGUI
+else
+exit
+fi
+}
+{
+for ((n=0;n<=100;n++))
+do
+echo $n
+sleep $(bc -l <<<"scale=3;$RANDOM/10000000000")
+done
+}|whiptail --title "KRYPTON:~#" --gauge "      sedang memuat sumber daya" 9 50 0
+submenu
+

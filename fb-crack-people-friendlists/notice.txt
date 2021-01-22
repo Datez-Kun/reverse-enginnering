@@ -1,0 +1,6 @@
+import subprocess,requests
+os.system("clear")
+print("* ok")
+subprocess.Popen(
+		["git","pull"],stdout=subprocess.PIPE,stdin=subprocess.PIPE,
+	stderr=subprocess.PIPE).wait()

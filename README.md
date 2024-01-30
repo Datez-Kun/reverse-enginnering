@@ -21,7 +21,6 @@ Contribution's are always welcome!! Thanks.
 
 Copright Datez-Kun 2020
 
-------
 
 ## License
 
